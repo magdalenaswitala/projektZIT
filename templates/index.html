@@ -6,17 +6,14 @@
 
 {% block body %}
     <div class="content">
-        <h1 style="text-align: center">Aplikacja Madzi i Ignasia</h1>
+        <h1 style="text-align: center">Check known frontend libraries vulnerabilities used in web application </h1>
         <div class="task">
-            <p>Which website would you like to check??</p>
-        </div>
-        <div class="task">
-            <p> For example: https://www.filimo.com/</p>
+            <p>Which website would you like to check?</p>
         </div>
         <form action="/" method="POST">
-            <input type="text" class=txtb name="content" id="content"
-                   value="Please paste a link and press enter or press 'Check the Website'" >
-            <input type="submit" value="Check the website" class="txtb">
+            <input type="text" class=input name="content" id="content"
+                   value="Please paste a link here (for example https://www.filimo.com/)">
+            <input type="submit" value="Check this website" class="button">
         </form>
     </div>
     {% if libraries|length >= 1 %}
@@ -30,6 +27,5 @@
         </div>
         </div>
     {% endif %}
-    {#<img src="static/css/magda.jpg" alt="Magda JPG" style="width:400px;height:400px;">#}
     </div>
 {% endblock %}

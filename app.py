@@ -13,20 +13,12 @@ def home():
         try:
             found_libraries_list = _find_libraries_on_website(website_link)
             _find_vulnerabilities_for_libraries(found_libraries_list)
-            fix_vulnerabilities(found_libraries_list)
-            return render_template("index.html", libraries=found_libraries_list)
+            libraries_list_to_string = ' , '.join(found_libraries_list)
+            return render_template("index.html", libraries=libraries_list_to_string)
         except:
             return 'There is an issue with this link'
-    # elif request.method == "GET":
-    #     try:
-    #         return render_template("index.html", libraries='No libraries were found for this page')
-    #     except:
-    #         return 'There is an issue with this link'
     else:
         return render_template("index.html", libraries=found_libraries_list)
-
-def fix_vulnerabilities(found_libraries_list):
-    case = 0
 
 @app.route("/vulnerabilities")
 def vulnerabilities():
@@ -44,7 +36,6 @@ def _find_libraries_on_website(website_link):
     [found_libraries.append(library) for library in libraries_list if library in html_as_string]
     if len(found_libraries) == 0:
         found_libraries.append('No libraries found for this website we are sorry')
-    print(found_libraries)
     return found_libraries
 
 

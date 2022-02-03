@@ -6,7 +6,7 @@
 }
 
 body{
-  background-image: linear-gradient(120deg,#487eb0,#fbc531);
+  background-color: whitesmoke;
   min-height: 100vh;
 }
 
@@ -17,15 +17,25 @@ body{
   padding: 10px;
 }
 
-.txtb{
+.button{
   width: 100%;
   border: none;
+  border-top: 2px solid #000;
   border-bottom: 2px solid #000;
   background: none;
   padding: 10px;
   outline: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #000000;
+}
+
+.input{
+  width: 30%;
+  background-color: #dddddd;
+  padding: 10px;
+  outline: none;
+  font-size: 15px;
+  color: #444444;
 }
 
 h3{
@@ -34,7 +44,6 @@ h3{
 
 .task{
   width: 100%;
-  background: rgba(255,255,255,0.5);
   padding: 18px;
   margin: 6px 0;
   overflow: hidden;
